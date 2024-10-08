@@ -1,32 +1,39 @@
-def find_from_index(word: str, lista: list[str], index: int):
-    for idx, el in enumerate(lista):
-        if idx >= index and el == word:
-            return idx
-    return -1
+def index_of_by_index(word, list, index):
+    if not word in list[index:]: return -1
+    for i, e in enumerate(list[index:]):
+        if e == word:
+            break
+    return len(list[:index]) + i
 
-def index_of_empty(lista: list[str]):
-    for idx, el in enumerate(lista):
-        if el == "":
-            return idx
-    return -1
+def index_of_empty(list):
+    if not '' in list: return -1
+    for i, e in enumerate(list):
+        if e == '':
+            break
+    return i
 
-def index_of(word: str, lista: list[str]):
-    for idx, el in enumerate(lista):
-        if el == word:
-            return idx
-    return -1
 
-def poner(palabra: str, lista: list[str]):
-    for idx, el in enumerate(lista):
-        if el == "":
-            lista[idx] = palabra
-            return idx
-    return -1
+def index_of(word, list):
+    if not word in list: return -1
+    for i, e in enumerate(list):
+        if e == word:
+            break
+    return i
 
-def eliminar(palabra: str, lista: list[str]):
-    contador = 0
-    for idx, el in enumerate(lista):
-        if el == palabra:
-            lista[idx] = ""
-            contador += 1
-    return contador
+
+def put(word, list):
+    if not '' in list: return -1
+    for i, e in enumerate(list):
+        if e == '':
+            break
+    list[i] = word
+    return i
+
+
+def remove(word, list):
+    if not word in list: return 0
+    count = 0
+    for i, e in enumerate(list):
+        if e == word:
+            list[i], count = "", count +1
+    return count
