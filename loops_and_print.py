@@ -1,15 +1,16 @@
-def enumerate_list(lista: list[str]):
-    resultado = []
-    for i, elemento in enumerate(lista):
-        if not elemento:
-            continue
-        resultado.append(f"{i}. {elemento}")
-    return resultado
+def enumerate_list(list):
+    result = []
+    for a in list:
+        if not a: continue
+        result += [f'{len(result)}. {a}']
+    
+    return result
 
-def enumerate_backwards(lista: list[str]):
-    resultado = []
-    for i, elemento in enumerate(lista):
-        if not elemento:
-            continue
-        resultado.append(f"{i}. {elemento[::-1]}")
-    return resultado
+
+def enumerate_backwards(list):
+    result = []
+    for a in list:
+        if not a: continue
+        result += [f'{len(result)}. {a[::-1]}']
+    
+    return result
